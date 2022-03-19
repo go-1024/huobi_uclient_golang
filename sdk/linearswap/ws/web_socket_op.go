@@ -4,15 +4,15 @@ import (
 	"container/list"
 	"encoding/json"
 	"fmt"
-	"github.com/gostudys/huobi_uclient_golang/sdk/linearswap"
-	"github.com/gostudys/huobi_uclient_golang/sdk/log"
-	"github.com/gostudys/huobi_uclient_golang/sdk/reqbuilder"
-	"github.com/gostudys/huobi_uclient_golang/sdk/wsbase"
 	"reflect"
 	"strings"
 	"time"
 
 	"github.com/gorilla/websocket"
+	"github.com/gostudys/huobi_uclient_golang/sdk/linearswap"
+	"github.com/gostudys/huobi_uclient_golang/sdk/log"
+	"github.com/gostudys/huobi_uclient_golang/sdk/reqbuilder"
+	"github.com/gostudys/huobi_uclient_golang/sdk/wsbase"
 )
 
 type MethonInfo struct {
@@ -328,7 +328,7 @@ func (wsOp *WebSocketOp) handleSubCallbackFun(ch string, data string, jdata map[
 
 func (wsOp *WebSocketOp) handleReqCallbackFun(ch string, data string, jdata map[string]interface{}) {
 	var mi *MethonInfo = nil
-	var found bool = false
+	var found = false
 	ch = strings.ToLower(ch)
 
 	if mi, found = wsOp.onReqCallbackFuns[ch]; !found {

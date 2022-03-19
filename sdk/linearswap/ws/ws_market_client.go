@@ -3,10 +3,11 @@
 import (
 	"encoding/json"
 	"fmt"
+	"reflect"
+
 	"github.com/gostudys/huobi_uclient_golang/sdk/linearswap"
 	"github.com/gostudys/huobi_uclient_golang/sdk/linearswap/ws/response/market"
 	"github.com/gostudys/huobi_uclient_golang/sdk/wsbase"
-	"reflect"
 )
 
 type WSMarketClient struct {

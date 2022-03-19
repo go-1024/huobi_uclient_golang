@@ -3,10 +3,11 @@
 import (
 	"encoding/json"
 	"fmt"
+	"reflect"
+
 	"github.com/gostudys/huobi_uclient_golang/sdk/linearswap"
 	"github.com/gostudys/huobi_uclient_golang/sdk/linearswap/ws/response/index"
 	"github.com/gostudys/huobi_uclient_golang/sdk/wsbase"
-	"reflect"
 )
 
 type WSIndexClient struct {
@@ -20,7 +21,6 @@ func (wsIx *WSIndexClient) Init(host string) *WSIndexClient {
 	wsIx.open("/ws_index", host, "", "", true)
 	return wsIx
 }
-
 
 // -------------------------------------------------------------
 // index kline start
@@ -52,7 +52,6 @@ func (wsIx *WSIndexClient) ReqIndexKLine(contractCode string, period string, cal
 
 // index kline end
 //-------------------------------------------------------------
-
 
 // -------------------------------------------------------------
 // premium index kline start
