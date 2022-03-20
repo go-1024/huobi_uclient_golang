@@ -144,7 +144,8 @@ func (wsOp *WebSocketOp) readLoop(conn *websocket.Conn) {
 		msgType, buf, err := conn.ReadMessage()
 		if err != nil {
 			log.Error("Read error: %s", err)
-			continue
+			wsOp.close()
+			break
 		}
 		var message string
 		if msgType == websocket.BinaryMessage {
